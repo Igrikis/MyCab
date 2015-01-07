@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 @ComponentScan("com.mycab")
 @EnableWebMvc
-public class Config extends WebMvcConfigurerAdapter {
+public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/views/**").addResourceLocations("/views/");
