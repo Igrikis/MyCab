@@ -1,1 +1,4 @@
-.\META-INF
+*.iml
+*.idea/
+*META-INF/
+*target
