@@ -81,8 +81,6 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-
-
         <!-- Add Web -->
         <dependency>
             <groupId>javax.servlet</groupId>
