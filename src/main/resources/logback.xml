@@ -29,8 +29,8 @@
 
   </appender>
 
-  <logger name="org.hibernate.type" level="ALL" />
-  <logger name="org.hibernate" level="DEBUG" />
+  <logger name="org.hibernate.type" level="WARN" />
+  <logger name="org.hibernate.transaction" level="WARN" />
 
   <root level="INFO">
     <appender-ref ref="FILE" />
