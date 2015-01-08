@@ -1,5 +1,7 @@
 package com.mycab.config;
 
+import com.mycab.dao.LoginDAOImpl;
+import com.mycab.repositories.LoginI;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +76,12 @@ public class ApplicationContextConfig {
                 sessionFactory);
 
         return transactionManager;
+    }
+
+    @Autowired
+    @Bean(name = "loginDAOImpl")
+    public LoginI getloginDao(SessionFactory sessionFactory) {
+        return new LoginDAOImpl(sessionFactory);
     }
 
 }

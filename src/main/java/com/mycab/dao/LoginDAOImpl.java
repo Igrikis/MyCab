@@ -5,14 +5,24 @@ import com.mycab.repositories.LoginI;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Repository
 public class LoginDAOImpl implements LoginI{
 
     @Autowired
     SessionFactory sessionFactory;
+
+    public LoginDAOImpl() {
+
+    }
+
+    public LoginDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     @Transactional
@@ -48,5 +58,10 @@ public class LoginDAOImpl implements LoginI{
         login.setIdLogin(id);
         sessionFactory.getCurrentSession().delete(login);
 
+    }
+
+    @Override
+    public Login findLoginByEmail(String email) {
+        return (Login) sessionFactory.getCurrentSession().load(Login.class, email);
     }
 }

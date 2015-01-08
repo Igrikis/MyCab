@@ -14,4 +14,6 @@ public interface LoginI {
 
     public void deleteLogin (int id);
 
+    public Login findLoginByEmail (String email);
+
 }
